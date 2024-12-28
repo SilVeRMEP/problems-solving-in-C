@@ -6,7 +6,6 @@ int romanToInt(char* s)
 {
 
     int R[256] = {0}, t = 0 , l = strlen(s);
-    const char VR[] = "IVXLCDM";
 
     R['I'] = 1;
     R['V'] = 5;
