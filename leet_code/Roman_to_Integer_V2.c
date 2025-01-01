@@ -34,3 +34,4 @@ int romanToInt(char* s)
     }
 
     return t;
+}
