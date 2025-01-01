@@ -1,28 +1,22 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
 char* longestCommonPrefix(char** strs, int strsSize)
 {
+    if (strsSize == 0) return "";
 
-    char *r = malloc(sizeof( strsSize * char ));
+    static char PF[201];
+    strcpy(PF , strs[0]);
 
-    qsort(strs , strlen(strs) ,sizeof(char));
-
-    for(int i = 0 ; i <strlen(strs) ; i++)
+    for (int i = 1 ; i < strsSize ; i++)
     {
-        if (strs[i] == strs[i + 1])
+        while (strncmp(PF , strs[i] , strlen(PF)) != 0 )
         {
-            r = strs[i]
-            trsSize = strlen(r)
-            return r;
-            
-        } 
-    } 
-    
-    free(r);
-    trsSize = 0;
-    return 0;
+            PF[strlen(PF) - 1] = '\0';
+            if (strlen(PF) == 0) return "";
+        }
+    }
 
-    
+    return PF;
+
 }
